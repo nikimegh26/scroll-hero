@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  background: #080808;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #080808;
+  overflow-x: hidden;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+::selection {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* -------------------------------- */
+/* FIZZ PRODUCT */
+/* -------------------------------- */
+
+.fizz-product {
+  position: relative;
+  width: 210px;
+  height: 430px;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 35px 35px rgba(0, 0, 0, 0.45));
+}
+
+.fizz-can {
+  position: absolute;
+  inset: 0;
+  border-radius: 48px 48px 38px 38px;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      90deg,
+      #151515 0%,
+      #343434 13%,
+      #111111 28%,
+      #444444 48%,
+      #111111 72%,
+      #303030 88%,
+      #111111 100%
+    );
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow:
+    inset 18px 0 25px rgba(255, 255, 255, 0.08),
+    inset -18px 0 25px rgba(0, 0, 0, 0.35),
+    inset 0 -25px 30px rgba(0, 0, 0, 0.35);
+}
+
+.fizz-can::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 88%;
+  height: 28px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: linear-gradient(#eeeeee, #777777);
+  border: 2px solid #333333;
+}
+
+.fizz-can::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 88%;
+  height: 25px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: linear-gradient(#666666, #171717);
+}
+
+.fizz-brand {
+  position: absolute;
+  inset: 105px 0 auto;
+  text-align: center;
+  font-size: 43px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  transform: rotate(-90deg);
+  text-shadow:
+    0 2px 0 #000,
+    0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+.fizz-line {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  top: 50%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.fizz-bubble {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.fizz-bubble.one {
+  width: 16px;
+  height: 16px;
+  right: 28px;
+  top: 90px;
+}
+
+.fizz-bubble.two {
+  width: 9px;
+  height: 9px;
+  left: 32px;
+  top: 165px;
+}
+
+.fizz-bubble.three {
+  width: 23px;
+  height: 23px;
+  right: 35px;
+  bottom: 105px;
+}
+
+/* -------------------------------- */
+/* RESPONSIVE PRODUCT */
+/* -------------------------------- */
+
+@media (max-width: 768px) {
+  .fizz-product {
+    width: 145px;
+    height: 300px;
+  }
+
+  .fizz-brand {
+    font-size: 30px;
+    inset: 75px 0 auto;
+  }
+}
